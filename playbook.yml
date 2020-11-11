@@ -1,0 +1,26 @@
+---
+- hosts: all
+  become: yes
+  vars_files:
+    - applications.yml
+
+  roles:
+    - geerlingguy.docker
+
+  tasks:
+    - name: Ensure Pip is installed.
+      package:
+        name: python-pip
+        state: present
+
+    - name: Install Docker Module for Python.
+      pip:
+        name: docker
+
+    - name: Create Docker Containers.
+      docker_container:
+        name: "{{ item.name }}"
+        image: "{{ item.image }}"
+        ports: "{{ item.ports }}"
+        state: "{{ item.state }}"
+      with_items: "{{ apps }}"

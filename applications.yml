@@ -1,0 +1,11 @@
+---
+apps:
+  - name: juice-shop
+    image: bkimminich/juice-shop
+    ports: 3000:3000
+    state: started
+
+  - name: WebGoat-8.0
+    image: webgoat/webgoat-8.0
+    ports: 4000:8080
+    state: started
