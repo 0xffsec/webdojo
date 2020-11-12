@@ -1,7 +1,7 @@
 <h1 align="center">
-0xffsec Dōjō
+0xffsec Web Dōjō
 <br>
-<small>Penetration Testing Lab</small>
+<small>Web Penetration Testing Lab</small>
 </h1>
 <p align="center">
 <b>dōjō</b> [doꜜː(d)ʑoː] : a hall for immersive learning or meditation.
@@ -10,7 +10,7 @@
 ## Getting Started
 
 Dōjō is a learning environment
-for penetration testing training sessions.
+for web applications penetration testing.
 
 The dōjō runs inside a CentOS virtual machine (VM)
 and includes a wide collection of vulnerable applications.
@@ -35,7 +35,7 @@ More will be added soon!
 Clone the repository:
 
 ```sh
-git clone https://github.com/0xffsec/dojo.git
+git clone https://github.com/0xffsec/webdojo.git
 ```
 
 Inside the dōjō start and provision the vagrant environment:
@@ -44,10 +44,7 @@ Inside the dōjō start and provision the vagrant environment:
 vagrant up
 ```
 
-:boom: Done!
-
-> -- I know kung fu.\
-> -- show me.
+:martial_arts_uniform: Done!
 
 - Juice Shop - http://127.0.0.1:3000
 - WebGoat 8.0 - http://127.0.0.1:4000
