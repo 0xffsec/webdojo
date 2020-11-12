@@ -46,11 +46,11 @@ vagrant up
 
 :martial_arts_uniform: Done!
 
-- Juice Shop - http://127.0.0.1:3000
-- WebGoat 8.0 - http://127.0.0.1:4000
+- Juice Shop - http://10.0.0.3:3000
+- WebGoat 8.0 - http://10.0.0.3:4000
 
 ## Contributing
 
 Contributions are welcome, and they are greatly appreciated! Every little bit helps, and credit will always be given.
 
-The best way to send feedback is to file an issue at https://github.com/0xffsec/dojo/issues
+The best way to send feedback is to file an issue at https://github.com/0xffsec/webdojo/issues

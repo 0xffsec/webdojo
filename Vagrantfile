@@ -5,11 +5,10 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.ssh.insert_key = false
 
-  config.vm.network "forwarded_port", guest: 3000, host: 3000
-  config.vm.network "forwarded_port", guest: 4000, host: 4000
+  config.vm.network "private_network", ip: "10.0.0.3"
 
   config.vm.provider :virtualbox do |v|
-    v.name = "0xffsec Dōjō"
+    v.name = "0xffsec Web Dōjō"
     v.memory = 1024
     v.cpus = 1
     v.customize ['modifyvm', :id, '--audio', 'none']
