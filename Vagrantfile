@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision :ansible_local do |ansible|
-    ansible.playbook = "playbook.yml"
-    ansible.galaxy_role_file = "requirements.yml"
+    ansible.playbook = "provisioning/playbook.yml"
+    ansible.galaxy_role_file = "provisioning/requirements.yml"
   end
 end

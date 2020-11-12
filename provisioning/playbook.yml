@@ -2,7 +2,7 @@
 - hosts: all
   become: yes
   vars_files:
-    - applications.yml
+    - ../applications.yml
 
   roles:
     - geerlingguy.docker
