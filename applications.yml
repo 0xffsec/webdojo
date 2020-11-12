@@ -6,6 +6,8 @@ apps:
     state: started
 
   - name: WebGoat-8.0
-    image: webgoat/webgoat-8.0
-    ports: 4000:8080
+    image: webgoat/goatandwolf
+    ports:
+      - 8080:8080
+      - 9090:9090
     state: started
