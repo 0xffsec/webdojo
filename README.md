@@ -18,7 +18,7 @@ Each application runs in isolation, inside the VM, as Docker containers.
 
 The VM is managed by [Vagrant](https://www.vagrantup.com/) using [VirtualBox](https://www.virtualbox.org/) and provisioned with [Ansible](https://www.ansible.com/).
 
-Running applications and their port bindings are set inside [applications.yml](applications.yml). By default running applications include:
+Running applications and their port bindings are set inside [applications.yml](provisioning/applications.yml). By default running applications include:
 
 - [OWASP JuiceShop](https://owasp.org/www-project-juice-shop/)
 - [WebGoat 8.0](https://github.com/WebGoat/WebGoat)

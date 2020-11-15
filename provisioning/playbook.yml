@@ -2,38 +2,41 @@
 - hosts: all
   become: yes
   vars_files:
-    - ../applications.yml
+    - applications.yml
 
   roles:
     - geerlingguy.docker
 
   tasks:
-    - name: Ensure Pip is installed.
+    - name: Install packages.
       package:
-        name: python-pip
+        name:
+          - python-pip
         state: present
 
-    - name: Install Docker Module for Python.
+    - name: Install Python modules.
       pip:
-        name: docker
+        name:
+          - docker
 
-    - name: Build Dojo Container.
+    - name: Build SPA container.
       docker_image:
-        name: webdojo
         build:
-          path: ../webdojo/
+          path: ../dojo/
+        name: dojo
+        source: build
 
-    - name: Create Dojo Container
+    - name: Create SPA container.
       docker_container:
-        name: webdojo
-        image: webdojo
+        image: dojo
+        name: dojo
+        ports: 80:80
         state: started
-        ports: 80:8080
 
-    - name: Create App Containers.
+    - name: Create applications containers.
       docker_container:
-        name: "{{ item.name }}"
         image: "{{ item.image }}"
+        name: "{{ item.name }}"
         ports: "{{ item.ports }}"
         state: "{{ item.state }}"
       with_items: "{{ apps }}"
