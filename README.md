@@ -46,8 +46,7 @@ vagrant up
 
 :martial_arts_uniform: Done!
 
-- Juice Shop - http://10.0.0.3:3000
-- WebGoat 8.0 - http://10.0.0.3:4000
+http://10.0.0.3
 
 ## Contributing
 

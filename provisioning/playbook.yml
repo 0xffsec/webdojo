@@ -17,7 +17,20 @@
       pip:
         name: docker
 
-    - name: Create Docker Containers.
+    - name: Build Dojo Container.
+      docker_image:
+        name: webdojo
+        build:
+          path: ../webdojo/
+
+    - name: Create Dojo Container
+      docker_container:
+        name: webdojo
+        image: webdojo
+        state: started
+        ports: 80:8080
+
+    - name: Create App Containers.
       docker_container:
         name: "{{ item.name }}"
         image: "{{ item.image }}"
