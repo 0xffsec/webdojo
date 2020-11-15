@@ -1,5 +1,10 @@
 ---
 apps:
+  - name: web-dvwa
+    image: vulnerables/web-dvwa
+    ports: 2000:80
+    state: started
+
   - name: juice-shop
     image: bkimminich/juice-shop
     ports: 3000:3000

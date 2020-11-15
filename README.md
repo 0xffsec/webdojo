@@ -20,6 +20,7 @@ The VM is managed by [Vagrant](https://www.vagrantup.com/) using [VirtualBox](ht
 
 Running applications and their port bindings are set inside [applications.yml](provisioning/applications.yml). By default running applications include:
 
+- [Damn Vulnerable Web App (DVWA)](http://www.dvwa.co.uk/)
 - [OWASP JuiceShop](https://owasp.org/www-project-juice-shop/)
 - [WebGoat 8.0](https://github.com/WebGoat/WebGoat)
 
