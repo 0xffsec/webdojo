@@ -25,13 +25,15 @@
           path: ../dojo/
         name: dojo
         source: build
+        state: present
+        force: yes
 
     - name: Create SPA container.
       docker_container:
         image: dojo
         name: dojo
         ports: 80:80
-        state: started
+        state: present
 
     - name: Create applications containers.
       docker_container:
