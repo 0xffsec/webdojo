@@ -13,6 +13,6 @@ apps:
   - name: WebGoat-8.0
     image: webgoat/goatandwolf
     ports:
-      - 4000:9090
-      - 4001:8080
+      - 4000:8080
+      - 4001:9090
     state: started
