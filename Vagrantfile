@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "10.0.0.3"
 
   config.vm.provider :virtualbox do |v|
-    v.name = "0xffsec Web Dōjō"
+    v.name = "Web Dōjō by 0xffsec"
     v.memory = 1024
     v.cpus = 1
     v.customize ['modifyvm', :id, '--audio', 'none']
