@@ -19,21 +19,14 @@
         name:
           - docker
 
-    - name: Build SPA container.
+    - name: Build Dojo container.
       docker_image:
         build:
           path: ../dojo/
-        name: dojo
+        name: 0xffsec-dojo
         source: build
         state: present
         force: yes
-
-    - name: Create SPA container.
-      docker_container:
-        image: dojo
-        name: dojo
-        ports: 80:80
-        state: present
 
     - name: Create applications containers.
       docker_container:

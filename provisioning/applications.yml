@@ -1,5 +1,10 @@
 ---
 apps:
+  - name: 0xffsec-webdojo
+    image: 0xffsec-dojo
+    ports: 80:80
+    state: started
+
   - name: web-dvwa
     image: vulnerables/web-dvwa
     ports: 2000:80
