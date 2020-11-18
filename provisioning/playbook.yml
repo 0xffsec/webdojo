@@ -1,8 +1,6 @@
 ---
 - hosts: all
   become: yes
-  vars_files:
-    - applications.yml
 
   roles:
     - geerlingguy.docker
@@ -11,27 +9,17 @@
     - name: Install packages.
       package:
         name:
-          - python-pip
+          - python3-pip
+        update_cache: yes
         state: present
 
     - name: Install Python modules.
       pip:
         name:
           - docker
+          - docker-compose
+        executable: pip3
 
-    - name: Build Dojo container.
-      docker_image:
-        build:
-          path: ../dojo/
-        name: 0xffsec-dojo
-        source: build
-        state: present
-        force: yes
-
-    - name: Create applications containers.
-      docker_container:
-        image: "{{ item.image }}"
-        name: "{{ item.name }}"
-        ports: "{{ item.ports }}"
-        state: "{{ item.state }}"
-      with_items: "{{ apps }}"
+    - name: Create and start services.
+      command: /usr/local/bin/docker-compose  --project-directory .. up -d
+      # Ansible's docker_service can't locate docker-compose since is not in the PATH.

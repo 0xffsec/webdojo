@@ -9,56 +9,65 @@ Web Dōjō
 
 ## Overview
 
-Dōjō is a learning environment
-for web application penetration testing.
+Web Dōjō is a learning and testing environment
+for web application hacking and pentesting.
 
-The dojo runs inside a CentOS virtual machine (VM)
-and includes a collection of vulnerable applications.
-Each application runs in isolation in [Docker](https://www.docker.com/) containers.
+The lab includes a collection of [vulnerable applications](#available-applications)
+easy accessible by a [landing page](#the-dojo).
 
-The environment is managed by [Vagrant](https://www.vagrantup.com/) using [VirtualBox](https://www.virtualbox.org/) and provisioned with [Ansible](https://www.ansible.com/).
-Running applications are configured from the [applications.yml](provisioning/applications.yml) file.
-
-### Available Applications
+## Available Applications
 
 - [Damn Vulnerable Web App (DVWA)](http://www.dvwa.co.uk/)
 - [OWASP JuiceShop](https://owasp.org/www-project-juice-shop/)
 - [WebGoat 8.0](https://github.com/WebGoat/WebGoat)
 
-## Requirements
+## Getting Started
 
-- [Vagrant](https://www.vagrantup.com/)
+The lab can be deployed either with [Vagrant](https://www.vagrantup.com/) on its own VM
+or on any machine running [Docker](https://www.docker.com/).
 
-## Quick Start
-
-Clone the repository:
+Clone and browse the repository:
 
 ```sh
 git clone https://github.com/0xffsec/webdojo.git
+cd webdojo
 ```
 
-Start and provision the vagrant environment:
+#### Using Vagrant (preferred)
+
+[Vagrant](https://www.vagrantup.com/docs/installation) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads) have to be installed.
 
 ```sh
-cd webdojo
 vagrant up
 ```
 
-:martial_arts_uniform: Done. Browse the dojo: http://10.0.0.3
+:martial_arts_uniform: Done!\
+The dojo will be available at http://10.0.0.3
+
+#### Using Docker Compose
+
+[Docker](https://docs.docker.com/get-docker/) has to be installed.
+
+```sh
+docker-compose up -d
+```
+
+:martial_arts_uniform: Done!\
+The dojo will be available at http://127.0.0.1
 
 ## The Dojo
 
-The dojo is a single web application (SPA)
+The dojo is a single page application (SPA)
 that serves as a menu for the available apps.
-It is binded to port `80`
-and accessible from http://10.0.0.3.
 
 ![Dojo SPA](./assets/dojo_spa.png)
 
-## Network
+## VirtualBox Network
 
-The installation creates a [Host-Only Network](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/network_hostonly.html) with address `10.0.0.1/24` and DHCP disabled.
-The VM is attached to it with the static IP `10.0.0.3`.
+When using Vagrant
+the installation creates a [Host-Only Network](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/network_hostonly.html) with address `10.0.0.1/24`
+and DHCP disabled.
+The VM is attached to the network with the static IP `10.0.0.3`.
 
 ```sh
 $ vboxmanage list hostonlyifs
@@ -71,12 +80,24 @@ NetworkMask:     255.255.255.0
 …
 ```
 
-If your pentesting machine lives in a different VM
-add a new adaptor attached to the newly created network.
+If your pentesting machine lives in a different VM,
+add it a new adaptor attached to the newly created network.
 
 ![VirtualBox Network Dialog](./assets/vb_network.png)
 
-The ip has te be set manually inside the vm.
+    The IP has to be manually set inside the VM.
+
+## Other Considerations
+
+#### Why Docker Compose
+
+Containers were initially built and started
+by iterating through a YAML file.
+Implementing Docker Compose
+removed complexity from the provisioner
+while adding flexibility for deployment.
+This modularization allows not only to deploy on a VM
+but on any system running Docker.
 
 ## Contributing
 
