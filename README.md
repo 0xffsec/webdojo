@@ -17,7 +17,7 @@ easy accessible by a [landing page](#the-dojo).
 
 ## Available Applications
 
-- [Damn Vulnerable Web App (DVWA)](http://www.dvwa.co.uk/)
+- [Damn Vulnerable Web App (DVWA)](http://dvwa.co.uk/)
 - [OWASP JuiceShop](https://owasp.org/www-project-juice-shop/)
 - [WebGoat 8.0](https://github.com/WebGoat/WebGoat)
 
@@ -35,7 +35,7 @@ cd webdojo
 
 #### Using Vagrant (preferred)
 
-[Vagrant](https://www.vagrantup.com/docs/installation) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads) have to be installed.
+Requirements: [Vagrant](https://www.vagrantup.com/docs/installation) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
 ```sh
 vagrant up
@@ -46,7 +46,7 @@ The dojo will be available at http://10.0.0.3
 
 #### Using Docker Compose
 
-[Docker](https://docs.docker.com/get-docker/) has to be installed.
+Requirements: [Docker](https://docs.docker.com/get-docker/).
 
 ```sh
 docker-compose up -d
@@ -64,7 +64,7 @@ that serves as a menu for the available apps.
 
 ## VirtualBox Network
 
-When using Vagrant
+When using Vagrant,
 the installation creates a [Host-Only Network](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/network_hostonly.html) with address `10.0.0.1/24`
 and DHCP disabled.
 The VM is attached to the network with the static IP `10.0.0.3`.
@@ -81,11 +81,12 @@ NetworkMask:     255.255.255.0
 ```
 
 If your pentesting machine lives in a different VM,
-add it a new adaptor attached to the newly created network.
+add a new adaptor to it and attach it to the newly created network.
+
+**The IP has to be manually set inside the VM.**
 
 ![VirtualBox Network Dialog](./assets/vb_network.png)
 
-    The IP has to be manually set inside the VM.
 
 ## Other Considerations
 
@@ -93,9 +94,9 @@ add it a new adaptor attached to the newly created network.
 
 Containers were initially built and started
 by iterating through a YAML file.
-Implementing Docker Compose
-removed complexity from the provisioner
-while adding flexibility for deployment.
+Docker Compose
+removes complexity from the provisioner
+while adding flexibility to the deployment.
 This modularization allows not only to deploy on a VM
 but on any system running Docker.
 
