@@ -24,7 +24,7 @@ readonly NC=$(tput sgr0)
 
 readonly REPO_URL="https://github.com/0xffsec/webdojo"
 readonly DEPENDENCIES=(vagrant vboxmanage docker docker-compose)
-readonly CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+readonly CURRENT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)"
 
 #######################################
 # Print script banner.
