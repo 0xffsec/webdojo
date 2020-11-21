@@ -9,6 +9,7 @@ IFS=$'\n\t'
 # Usage
 # - Execute inside the repository
 # - curl -sSL https://0xffsec.com/webdojo/install.sh | bash
+# - git.io/webdojo-install
 
 # Author:   Max Rodrigo
 # Date:     2020-11-19
