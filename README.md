@@ -21,7 +21,13 @@ easy accessible by a [landing page](#the-dojo).
 - [OWASP JuiceShop](https://owasp.org/www-project-juice-shop/)
 - [WebGoat 8.0](https://github.com/WebGoat/WebGoat)
 
-## Getting Started
+## Quick Start
+
+```sh
+curl -sSL git.io/webdojo-install | bash
+```
+
+## Manual Installation
 
 The lab can be deployed either with [Vagrant](https://www.vagrantup.com/) on its own VM
 or on any machine running [Docker](https://www.docker.com/).
@@ -31,6 +37,12 @@ Clone and browse the repository:
 ```sh
 git clone https://github.com/0xffsec/webdojo.git
 cd webdojo
+```
+
+#### Wizard
+
+```sh
+./install.sh
 ```
 
 #### Using Vagrant (preferred)
