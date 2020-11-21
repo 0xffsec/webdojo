@@ -188,7 +188,7 @@ function do_install() {
     command_exists docker && command_exists docker-compose;then
 
     PS3="Select the installation method: "
-    select method in Docker Vagrant; do break; done
+    select method in Docker Vagrant; do break; done < /dev/tty
     printf '%-15s › %s\n' "Selected method" "$(cecho $method $GREEN)"
 
   elif command_exists vagrant && command_exists vboxmanage;then
@@ -205,15 +205,20 @@ function do_install() {
     err "Review the dependencies."
   fi
 
-  # Confirm
-  read -r -p "Proceed? [Y/n]" -n 1
-  echo
-  response=${REPLY,,}
+  # When piped, read from stdout instead of stdin
+  echo -n "Proceed? [Y/n]: "
+  read -r proceed < /dev/tty
+  # POSIX lowercase
+  response=$(echo "$proceed" | tr '[:upper:]' '[:lower:]')
+
   if [[ ! $response =~ ^(yes|y| ) ]] && [[ ! -z $response ]]; then
-    err "Aborting."
+    cecho "Aborting." $RED
+    exit 0
   fi
 
-  case ${method,,} in
+  # POSIX lowercase
+  method=$(echo "$method" | tr '[:upper:]' '[:lower:]')
+  case $method in
     vagrant )
       # From the doc: "(...) when running Vagrant from a scripting environment
       # in order to set the directory that Vagrant sees."
