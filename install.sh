@@ -226,9 +226,11 @@ function do_install() {
       # https://www.vagrantup.com/docs/other/environmental-variables
       export VAGRANT_CWD="$repo_path"
       vagrant up
+      cecho "Done! http://10.0.0.3/" $GREEN
       ;;
     docker )
       docker-compose -f ${repo_path}/docker-compose.yml up  -d
+      cecho "Done! http://127.0.0.1/" $GREEN
       ;;
   esac
 }

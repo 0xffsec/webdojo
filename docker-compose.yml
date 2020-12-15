@@ -1,19 +1,31 @@
 version: "3.8"
 services:
-  0xffsec-dojo:
-    build: ./dojo/
+  honbu-dojo :
+    container_name: honbu-dojo
+    image: ghcr.io/0xffsec/honbu-dojo:main
     ports:
-      - "80:80"
+      - "80:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
   web-dvwa:
+    container_name: web-dvwa
     image: vulnerables/web-dvwa
     ports:
       - "2000:80"
+    labels:
+      - "webapp"
   juice-shop:
+    container_name: juice-shop
     image: bkimminich/juice-shop
     ports:
       - "3000:3000"
+    labels:
+      - "webapp"
   webgoat:
+    container_name: webgoat
     image: webgoat/goatandwolf
     ports:
       - "4000:8080"
       - "4001:9090"
+    labels:
+      - "webapp"

@@ -13,7 +13,7 @@ Web Dōjō is a learning and testing environment
 for web application hacking and pentesting.
 
 The lab includes a collection of [vulnerable applications](#available-applications)
-easy accessible by a [landing page](#the-dojo).
+easy accessible through a [landing page](#the-dojo).
 
 ## Available Applications
 
@@ -69,10 +69,8 @@ The dojo will be available at http://127.0.0.1
 
 ## The Dojo
 
-The dojo is a single page application (SPA)
+The dojo is a web application
 that serves as a menu for the available apps.
-
-![Dojo SPA](./assets/dojo_spa.png)
 
 ## VirtualBox Network
 
@@ -98,7 +96,6 @@ add a new adaptor to it and attach it to the newly created network.
 **The IP has to be manually set inside the VM.**
 
 ![VirtualBox Network Dialog](./assets/vb_network.png)
-
 
 ## Other Considerations
 
