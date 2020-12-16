@@ -95,7 +95,7 @@ add a new adaptor to it and attach it to the newly created network.
 
 **The IP has to be manually set inside the VM.**
 
-![VirtualBox Network Dialog](./assets/vb_network.png)
+![VirtualBox Network Dialog](../assets/vb_network.png?raw=true)
 
 ## Other Considerations
 
