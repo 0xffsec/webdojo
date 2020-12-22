@@ -29,3 +29,10 @@ services:
       - "4001:9090"
     labels:
       - "webapp"
+  dvna:
+    container_name: dvna
+    image: appsecco/dvna:sqlite
+    ports:
+      - "5000:9090"
+    labels:
+      - "webapp"

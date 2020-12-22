@@ -20,6 +20,7 @@ easy accessible through a [landing page](#the-dojo).
 - [Damn Vulnerable Web App (DVWA)](http://dvwa.co.uk/)
 - [OWASP JuiceShop](https://owasp.org/www-project-juice-shop/)
 - [WebGoat 8.0](https://github.com/WebGoat/WebGoat)
+- [Damn Vulnerable NodeJS Application](https://github.com/appsecco/dvna)
 
 ## Quick Start
 
